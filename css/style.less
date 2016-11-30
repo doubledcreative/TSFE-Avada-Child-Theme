@@ -1,0 +1,88 @@
+/*
+Theme Name: Avada Child Theme - TFSE
+Author: Tom Brookes & Tom Dent
+Author URI: http://www.doubledcreative.com
+*/
+
+/* Less Mixins */
+
+.transition (@transition: all 0.2s ease-in-out) {
+	-webkit-transition:@transition;
+	-moz-transition:@transition;
+	-o-transition:@transition;
+	transition:@transition;
+}
+
+.transform(@string){
+	-webkit-transform:@string;
+	-moz-transform:@string;
+	-ms-transform:@string;
+	-o-transform:@string;
+	transform:@string;
+}
+
+.border-radius (@border-radius: 0px) {
+	-webkit-border-radius:@border-radius;
+	-moz-border-radius:@border-radius;
+	border-radius:@border-radius;
+}
+
+.box-shadow (@box-shadow: rgba(0,0,0,0)) {
+	-webkit-box-shadow:@box-shadow;
+	-moz-box-shadow:@box-shadow;
+	box-shadow:@box-shadow;
+}
+
+/*.font1(@size: 22px, @height: 32px) {
+	font-family:"brandon-grotesque", Helvetica, Arial, sans-serif!important;
+	font-size: @size!important;
+	line-height: @height!important;
+}*/
+
+.bg-clip(){
+	-moz-background-clip:padding!important;
+	-webkit-background-clip:padding!important;
+	background-clip:padding-box!important;
+}
+
+.gradient (@degree: 20deg, @startColor: #000, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, @degree, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(@degree, @startColor, @endColor);
+	background: -moz-linear-gradient(@degree, @startColor, @endColor);
+	background: -ms-linear-gradient(@degree, @startColor, @endColor);
+	background: -o-linear-gradient(@degree, @startColor, @endColor);
+}
+
+.uppercase(){text-transform:uppercase!important;}
+
+/* Dave */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Colours */
+
+@white:  	#FFF!important;		/* White			*/
+@black:		#000!important;		/* Black 			*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* MAIN */
+
+body{-webkit-font-smoothing:antialiased!important;overflow:hidden;}
+.divider{height:1px;display:block;border-top:1px solid @white;margin-top:30px;padding-bottom:30px;}
+a:hover{.transition (@transition: all 0.2s ease-in-out);}
+.hover-type-zoomin:hover{
+	.fusion-column-inner-bg-image{opacity:1!important;}
+}
+iframe{border:none!important;}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES //////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 900px) {
+
+	
+}
