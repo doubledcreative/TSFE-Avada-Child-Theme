@@ -58,14 +58,29 @@ function wpd_remove_modified_date(){
 }
 add_action( 'template_redirect', 'wpd_remove_modified_date' );
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* Remove Query String */
 
 function _remove_script_version( $src ){
-	$parts = explode( '?', $src );
-	return $parts[0];
+  $parsed = parse_url($src);
+
+  if (isset($parsed['query'])) {
+    parse_str($parsed['query'], $qrystr);
+    if (isset($qrystr['ver'])) {
+      unset($qrystr['ver']); 
+    }
+    $parsed['query'] = http_build_query($qrystr);
+  }
+  // return http_build_url($parsed); // elegant but not always available
+
+  $src = '';
+  $src .= (!empty($parsed['scheme'])) ? $parsed['scheme'].'://' : '';
+  $src .= (!empty($parsed['host'])) ? $parsed['host'] : '';
+  $src .= (!empty($parsed['path'])) ? $parsed['path'] : '';
+  $src .= (!empty($parsed['query'])) ? '?'.$parsed['query'] : '';
+
+  return $src;
 }
 add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );

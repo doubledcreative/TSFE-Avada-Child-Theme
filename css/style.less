@@ -33,11 +33,11 @@ Author URI: http://www.doubledcreative.com
 	box-shadow:@box-shadow;
 }
 
-/*.font1(@size: 22px, @height: 32px) {
-	font-family:"brandon-grotesque", Helvetica, Arial, sans-serif!important;
+.font1(@size: 18px, @height: 1.3) {
+	font-family:"Montserrat", Helvetica, Arial, sans-serif!important;
 	font-size: @size!important;
 	line-height: @height!important;
-}*/
+}
 
 .bg-clip(){
 	-moz-background-clip:padding!important;
@@ -56,7 +56,7 @@ Author URI: http://www.doubledcreative.com
 
 .uppercase(){text-transform:uppercase!important;}
 
-/* Dave */
+/* Dave*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,12 +64,26 @@ Author URI: http://www.doubledcreative.com
 
 @white:  	#FFF!important;		/* White			*/
 @black:		#000!important;		/* Black 			*/
+@grey1:		#F8F8F8!important;	/* Light Grey		*/
+@orange:	#FF9800!important;
+@blue:		#0a435f!important;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* General CSS */
+
+h1 {text-transform: uppercase;}
+h2 {text-transform: uppercase;}
+h3 {text-transform: uppercase;}
+h4 {text-transform: uppercase;}
+
+ul {margin-left:-23px;}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* MAIN */
 
-body{-webkit-font-smoothing:antialiased!important;overflow:hidden;}
+body{-webkit-font-smoothing:antialiased!important;/*overflow:hidden;*/}
 .divider{height:1px;display:block;border-top:1px solid @white;margin-top:30px;padding-bottom:30px;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
 .hover-type-zoomin:hover{
@@ -78,11 +92,468 @@ a:hover{.transition (@transition: all 0.2s ease-in-out);}
 iframe{border:none!important;}
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
-/* MEDIA QUERIES //////////////////////////////////////////////////////////////////////////////// */
+
+/* HEADER & NAV */
+
+.fusion-main-menu > ul > li{
+	a{text-transform:uppercase;text-shadow:0 0 20px rgba(0,0,0,0.5);}
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/*Global Button Top Padding*/
+
+.tsfe-orange-btn {margin-top: 6px; margin-bottom: 15px;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* THE GRID TEXT SHADOW CSS 
+
+.tg-sf-experience-skin-2 div.tg-item-media-content {
+
+	h2 {
+		a{text-transform:uppercase;text-shadow:0 0 20px;}
+		a:hover{text-transform:uppercase;text-shadow:0 0 0px;}
+	}
+	
+	h5 {
+		a{text-transform:uppercase;text-shadow:0 0 20px;}
+		a:hover{text-transform:uppercase;text-shadow:0 0 0px;}
+	}
+
+} */
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+.fusion-is-sticky .fusion-main-menu > ul > li{
+	a{text-shadow:none;}
+}
+
+.tsfe-nav-social{padding-right:20px!important;}
+
+/* Mega Menu */
+
+.fusion-megamenu-wrapper{margin-top:-10px;text-shadow:none!important;
+	.second-level-widget{padding:0;margin:0;
+		.widget{margin:0 34px 15px;
+			.fusion-button.button-1{box-sizing:border-box!important;-moz-box-sizing:border-box!important;-webkit-box-sizing:border-box!important;margin-top:15px;
+				&:hover{background:@white}
+			}
+		}
+	}
+}
+
+/* Recent Posts Mega Menu Section */
+
+#rpjc_widget_cat_recent_posts-2{padding:0;margin:0;
+	ul{
+		li{width:100%;
+			a{color:@white!important;text-shadow:none;border-bottom:1px solid rgba(255,255,255,0.2);padding:5px 34px 6px;
+				&:hover{background:@orange;}
+			}
+		}
+	}
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Main Page Title Section inc black overlay over images */
+
+.fusion-page-title-bar{padding-top:70px!important;text-shadow: 0 0 20px rgba(0,0,0,0.5);overflow:hidden;
+	h1{padding-bottom:5px!important; text-transform: uppercase;}
+	h3{font-family: "Roboto Slab"; font-weight: 700; font-size: 30px; color:#f7941d; text-transform: uppercase; line-height: 1.0em; margin-bottom:10px;}
+	&:after{background:@black;height:600px;content:"";width:200%;display:block;margin-top:-520px;opacity:0.6;margin-left:-50px;}
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* SERIES OVERVIEW PAGES */
+
+.tfse-grid-button{margin:0 5px!important;
+	a{padding:12px 29px!important;display:block;color:@black;
+		&:hover{background:@white;color:@orange;}
+	}
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Blue Events Post Bar - Countdown 3/5 Column */
+
+.tsfe-event-count{
+	.fusion-column-wrapper{padding:4%!important;
+		.tsfe-timer{padding:0;font-family:"Roboto Slab";
+			.fusion-countdown-counter-wrapper{width:100%;margin:0;
+				.fusion-dash-wrapper{display:block!important;width:24%;margin:0 1% 20px 0;float:left;padding:0;
+					.fusion-dash{padding:20px 0!important;background-color:#10374F;font-size:32px;line-height:32px;text-transform:uppercase;
+						.fusion-digit{padding:0;font-weight:700;color:@white;
+							div{width:auto;}
+						}
+					.fusion-dash-title{font-size:20px;line-height:20px;display:block;padding:0;}
+					}
+					&:last-of-type{margin-right:0;width:25%;}
+				}
+			}
+		}
+		.fusion-builder-row-inner{
+			.fusion-column-wrapper{padding:0!important;}
+		}
+	}
+	.tsfe-orange-btn{margin-top: 6px; margin-bottom: 0px;}
+}
+
+/* Blue Events Post Bar - Info 2/5 Column */
+
+.tsfe-event-info{
+	.fusion-column-wrapper{padding:3% 6% 4% 6%!important;
+		.fusion-content-box-hover{margin-bottom:0!important;padding:12px 0;margin-left:15px!important;margin-right:15px!important;width:93%;border-bottom:1px solid rgba(255, 255, 255, 0.1);margin:0 5%;
+			.heading{margin:0!important;
+				.icon{text-align:center;}
+				.content-box-heading{.font1(@size: 18px, @height: 1.3);color:@white;}
+			}
+		}	
+	}
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Generic Grey Box Padding Container Padding */
+
+.tsfe-grey-container-padding {max-width: 1200px!important; margin-left: auto!important; margin-right: auto!important; padding-top: 40px!important; padding-left: 60px!important; padding-bottom: 30px!important; padding-right: 60px!important;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Event Grey Box Padding - Container Padding */
+
+.tsfe-event-padding-even{
+		.fusion-column-wrapper {padding-top: 50px!important; padding-left: 60px!important; padding-bottom: 40px!important; padding-right: 60px!important;}
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Testimonial */
+
+.fusion-testimonials.clean{
+	blockquote q {font-family: "Roboto Slab"; font-weight: 700; font-style: normal; padding: 25px; line-height: 36px; font-size: 30px; letter-spacing: 0px;}
+	.author{margin-top: 10px; font-size: 18px; letter-spacing: 0px;}
+}
+
+.tsfe-testimonials-padding {padding-top: 6%!important; padding-right: 35px!important; padding-bottom: 4%!important; padding-left: 35px!important;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Meet The Team - Person CSS */
+
+.tsfe-team-padding {padding-top: 60px!important; padding-bottom: 20px!important;}
+.person-name {text-transform: uppercase;}
+.person-title {text-transform: uppercase;}
+.person-content {margin-top: 13px!important;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Homepage - Video Section - Padding for container & Youtube Video 
+
+.tsfe-video-text-padding {padding-left: 21%; padding-right: 21%;}
+.tsfe-video-padding {padding-top:30px; padding-left: 15%!important; padding-right: 15%!important;}*/
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Homepage - Charity Bar - Padding & Button Padding */
+
+.tsfe-charity-padding {
+	padding-top: 60px!important; padding-bottom: 65px!important; background-image: url(http://273.1d3.mwp.accessdomain.com/wp-content/uploads/t2m_header.jpg); background-size: cover!important; background-repeat: no-repeat!important; background-position: left center!important;
+	.tsfe-website-btn {margin-top: 10px; margin-bottom:0px; margin-right: 20px}
+	.tsfe-download-btn {margin-top: 10px; margin-bottom:0px;}
+}
+
+.tsfe-t2minds-logo {max-width: 300px; padding-top: 10px; padding-bottom: 35px; display: block;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* FAQ */
+
+.tsfe_faq_box{margin-bottom:40px!important;
+	.fusion-column-wrapper{background:@grey1;padding:40px 40px 20px 40px;}
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Sign Off - Tough Enough Bar */
+
+.tsfe-tough-enough-bar{
+	.fusion-column-wrapper{padding-top:10%!important;padding-left:10%!important;padding-bottom:10%!important;padding-right:10%!important;
+		h1{text-shadow:0 0 20px rgba(0,0,0,1);margin-bottom:20px!important;}
+	}
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Footer Styling CSS */
+
+/*.fusion-footer-widget-area .widget-title, .fusion-footer-widget-area h3 {margin: 0 0 18px 0;}
+
+.fusion-widget-area .widget .recentcomments, .fusion-widget-area .widget_archive li, .fusion-widget-area .widget_categories li, .fusion-widget-area .widget_layered_nav li, .fusion-widget-area .widget_links li, .fusion-widget-area .widget_meta li, .fusion-widget-area .widget_nav_menu li, .fusion-widget-area .widget_pages li, .fusion-widget-area .widget_product_categories li, .fusion-widget-area .widget_recent_entries li {padding: 2px 10px 2px 12px; border-bottom: 0px ;}*/
+
+.fusion-footer{
+	.fusion-column{padding-left:40px;padding-right:40px;
+		.widget{
+			ul{
+				li{border-bottom:1px solid rgba(255,255,255,0.1);padding:8px 0;
+					a{
+						&:before{content:none;}
+						&:hover{color:@orange;}
+					}
+				}
+			}
+			p{margin:0 0 20px!important;}
+		}
+		.rpjc_widget_cat_recent_posts{
+			ul{margin-top:-10px;}
+		}
+	}
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1300PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1300px) {
+	
+	/* Generic Grey Box Padding Container Padding */
+	
+	.tsfe-grey-container-padding {max-width: 1200px!important; margin-left: -15px!important; margin-right: -15px!important; padding-top: 40px!important; padding-left: 60px!important; padding-bottom: 30px!important; padding-right: 60px!important;}
+	
+	.fusion-footer{
+		.fusion-footer-widget-area{padding-top:40px;padding-bottom:40px;
+			.fusion-row{padding-left:10px;padding-right:10px;
+				.fusion-column{padding-left:20px;padding-right:20px;}
+			}
+		}
+	}
+	
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1040PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1040px) {
+
+
+	/* Mobile Header */
+	
+	.tsfe-nav-social{padding-right:0!important;}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Page Title Bar */
+	
+	.fusion-page-title-bar{height:300px;padding-top:20px!important;
+		h1{font-size:3em;padding-bottom:5px!important;}
+		h3{font-size:1.6em;line-height:1em;margin-bottom:10px;}
+	}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////// */
+		
+	/* Homepage Video Section - Padding for container & Youtube Video */
+
+	.tsfe-video-text-padding {padding-left: 15%; padding-right: 15%;}
+	.tsfe-video-padding {padding-left: 15%!important; padding-right: 15%!important;}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Hide Footer 1st Column */
+	
+	.fusion-footer{
+		.fusion-footer-widget-area{
+			.fusion-row{
+				.fusion-column{width:25%;
+					&:first-of-type{display:none;}
+				}
+			}
+		}
+	}
+			
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 900PX ////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 @media only screen and (max-width: 900px) {
 
+	/* 2 Column Switch - 2 Column Breakpoint */
+	
+	.tfse-event-4col{
+		.fusion-one-fourth{width:49%!important; margin-right:2%!important; margin-bottom:20px!important;
+			&:nth-of-type(2n){margin-right:0!important;}
+		}
+	}
 	
 }
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800PX ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 800px) {
+	
+	/* Page Title Bar */
+	
+	.fusion-page-title-bar{height:250px!important;padding-top:20px!important;
+		h1{font-size:2.4em!important;padding-bottom:5px!important;}
+		h3{font-size:1.4em!important;line-height:1.2em!important;}
+	}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+	/* 2 Column Switch */
+	
+	.tfse-event-4col{
+		.fusion-one-fourth{width:100%!important;margin-right:0!important; margin-bottom:0px!important;
+			&:nth-of-type(2n){margin-right:0!important;}
+		}
+	}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Mobile Container & Header Padding Removal 0px */	
+	
+	.tsfe-heading-padding{margin-top:40px!important;}
+	
+	.tsfe-category-mob-padding{padding-top:0!important; padding-left:0!important; padding-right:0!important;}
+		
+	.tsfe-mob-padding{padding-top:0!important; padding-left:0!important; padding-right:0!important; padding-bottom:0!important; margin-top:0px!important;}		
+	
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Blue Events Post Bar - Countdown 3/5 Column */
+	
+	.tsfe-event-count{
+		.fusion-column-wrapper{padding:4% 4% 0%!important;background:none!important;}
+	}
+
+	/* Blue Events Post Bar - Info 2/5 Column */
+
+	.tsfe-event-info{
+		.fusion-column-wrapper{padding:0% 6% 0% 6%!important;background:none!important;}
+	}
+	
+	/* Event Category Backgound Colour Change */
+	
+	.tsfe-category-background{
+		.fusion-column-wrapper {background-color: @white; padding-top:30px!important; padding-bottom:0!important;}
+		&:nth-of-type(1){
+			.fusion-column-wrapper{padding-top:0!important;}
+		}
+	}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Generic Grey Box Padding Container Padding */
+
+	.tsfe-grey-container-padding {margin-top: 0!important; margin-left: -50px!important; margin-right: -50px!important; padding: 30px 35px 30px 35px!important;}
+	
+	
+	/* Event Grey Box Padding - Container Padding */
+	
+	.tsfe-event-padding-even{
+		.fusion-column-wrapper {padding-top: 40px!important; padding-left: 35px!important; padding-bottom: 40px!important; padding-right: 35px!important;}
+	}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Testimonial */
+	
+	.fusion-testimonials.clean{
+		blockquote q {font-family: "Roboto Slab"; font-weight: 700; font-style: normal; padding: 25px; line-height: 30px; font-size: 24px; letter-spacing: 0px;}
+		.author{margin-top: 10px; font-size: 18px; letter-spacing: 0px;}
+	}
+
+	.tsfe-testimonials-padding {padding-top: 60px!important; padding-left: 35px!important; padding-bottom: 40px!important; padding-right: 35px!important;}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+		
+	/* Homepage Video Section - Padding for container & Youtube Video */
+	
+	.tsfe-video-text-padding {padding-left: 10%; padding-right: 10%}
+	.tsfe-video-padding {padding-left: 10%!important; padding-right: 10%!important;}
+	
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500PX //////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 500px) {
+	
+	/* Event Category Icon Left Align */
+	
+	.tsfe-category-background{
+		.fusion-column-wrapper{
+			.imageframe-align-center {text-align: ; margin-bottom: 20px!important;}
+		}
+	}	
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Sign Off - Tough Enough Bar */
+
+	.tsfe-tough-enough-bar{
+		.fusion-column-wrapper {padding-top: 40px!important; padding-left: 35px!important; padding-bottom: 40px!important; padding-right: 35px!important;}
+	}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Homepage Video Section - Padding for container & Youtube Video */
+	
+	.tsfe-video-text-padding {padding-left: 0; padding-right: 0;}
+	.tsfe-video-padding {padding-top: 10px; padding-left: 0px!important; padding-right: 0px!important;}
+	
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Charity Bar - Padding & Button Padding */
+
+	.tsfe-charity-padding {
+		padding-top: 0px; padding-bottom: 0px; background-image: none;
+		.tsfe-orange-btn {margin-top: 6px; margin-bottom:15px;}
+	}
+	
+
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Meet The Team - Person CSS */
+
+	.tsfe-team-padding {padding-top: 40px!important; padding-bottom: 0px!important;}
+	
+	
+}
+
