@@ -1,8 +1,31 @@
-/*
-Theme Name: Avada Child Theme - TFSE
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+The S.F Experience
+
+Theme Name: Avada Child Theme
 Author: Tom Brookes & Tom Dent
 Author URI: http://www.doubledcreative.com
-*/
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Contents
+
+- Less Mixins
+- Site Colours
+- Global Styles
+- Navigation
+- Main Styles
+- Gravity Forms
+- Media Queries
+	- 800px
+	- 500px
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /* Less Mixins */
 
@@ -56,9 +79,9 @@ Author URI: http://www.doubledcreative.com
 
 .uppercase(){text-transform:uppercase!important;}
 
-/* Dave*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /* Colours */
 
@@ -68,39 +91,45 @@ Author URI: http://www.doubledcreative.com
 @orange:	#FF9800!important;
 @blue:		#0a435f!important;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/* General CSS */
-
-h1 {text-transform: uppercase;}
-h2 {text-transform: uppercase;}
-h3 {text-transform: uppercase;}
-h4 {text-transform: uppercase;}
-
-ul {margin-left:-23px;}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* MAIN */
 
-body{-webkit-font-smoothing:antialiased!important;/*overflow:hidden;*/}
-.divider{height:1px;display:block;border-top:1px solid @white;margin-top:30px;padding-bottom:30px;}
+/* Global CSS */
+
+html{overflow-y:scroll!important;}
+body{-webkit-font-smoothing:antialiased!important;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
 .hover-type-zoomin:hover{
 	.fusion-column-inner-bg-image{opacity:1!important;}
 }
 iframe{border:none!important;}
+h1 {text-transform: uppercase;}
+h2 {text-transform: uppercase;}
+h3 {text-transform: uppercase;}
+h4 {text-transform: uppercase;}
+ul {margin-left:-23px;}
 
-/* ////////////////////////////////////////////////////////////////////////////////////////////// */
-
-/* HEADER & NAV */
-
-.fusion-main-menu > ul > li{
-	a{text-transform:uppercase;text-shadow:0 0 20px rgba(0,0,0,0.5);}
+p {
+	a:hover{border-bottom: 1px dashed #ff9800;}
 }
 
 
+
+.rs-background-video-layer {margin-top: -10px!important; margin-left: 0!important; width: 105%!important; height: 105%!important;}
+
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Homepage Slider Overlay*/
+
+.tp-dottedoverlay.twoxtwo {/*background: url(none);*/ background-color: rgba(0, 0, 0, 0.2) !important;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
 
 /*Global Button Top Padding*/
 
@@ -110,31 +139,26 @@ iframe{border:none!important;}
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-/* THE GRID TEXT SHADOW CSS 
+/* Header and Navigation */
 
-.tg-sf-experience-skin-2 div.tg-item-media-content {
-
-	h2 {
-		a{text-transform:uppercase;text-shadow:0 0 20px;}
-		a:hover{text-transform:uppercase;text-shadow:0 0 0px;}
-	}
-	
-	h5 {
-		a{text-transform:uppercase;text-shadow:0 0 20px;}
-		a:hover{text-transform:uppercase;text-shadow:0 0 0px;}
-	}
-
-} */
-
-
-/* ////////////////////////////////////////////////////////////////////////////////////////////// */
-
+.fusion-main-menu > ul > li{
+	a{text-transform:uppercase;text-shadow:0 0 20px rgba(0,0,0,0.5);}
+}
 
 .fusion-is-sticky .fusion-main-menu > ul > li{
 	a{text-shadow:none;}
 }
 
-.tsfe-nav-social{padding-right:20px!important;}
+.tsfe-nav-social{padding-right:8px!important;
+	.menu-text{font-size: 24px!important;}
+}
+
+.fusion-main-menu {
+	.fusion-main-menu-search {padding-left:8px!important;}
+	
+}
+	
+	
 
 /* Mega Menu */
 
@@ -162,6 +186,13 @@ iframe{border:none!important;}
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
+/* Global Google Map Stying */
+
+.gm-style .gm-style-iw {font-family: 'Roboto'; font-size: 16px; font-weight: 400; color: #5d6367; padding: 11px 10px 4px 10px;}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
 /* Main Page Title Section inc black overlay over images */
 
 .fusion-page-title-bar{padding-top:70px!important;text-shadow: 0 0 20px rgba(0,0,0,0.5);overflow:hidden;
@@ -170,15 +201,20 @@ iframe{border:none!important;}
 	&:after{background:@black;height:600px;content:"";width:200%;display:block;margin-top:-520px;opacity:0.6;margin-left:-50px;}
 }
 
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* SERIES OVERVIEW PAGES */
 
-.tfse-grid-button{margin:0 5px!important;
+.tfse-grid-button{
 	a{padding:12px 29px!important;display:block;color:@black;
 		&:hover{background:@white;color:@orange;}
 	}
 }
+
+.tg-nav-bg .tg-nav-font {font-size: 14px!important; line-height: 17px; font-family: 'Montserrat'; text-transform: uppercase;}
+.tg-filter-name {padding: 5px 29px;}
+
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -236,7 +272,6 @@ iframe{border:none!important;}
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
-
 /* Testimonial */
 
 .fusion-testimonials.clean{
@@ -250,21 +285,25 @@ iframe{border:none!important;}
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-/* Meet The Team - Person CSS */
+/* Events Overview Section - 3 Col Boxes */
 
-.tsfe-team-padding {padding-top: 60px!important; padding-bottom: 20px!important;}
-.person-name {text-transform: uppercase;}
-.person-title {text-transform: uppercase;}
-.person-content {margin-top: 13px!important;}
-
+.tsfe-event-box{background:@grey1;margin-bottom:40px!important;
+	.fusion-column-wrapper{
+		.fusion-title{padding:0 10%;margin:30px 0 20px!important;
+			h2{font-size:20px!important;}
+		}
+		.fusion-separator{margin-left:10%;}
+		p{padding:0 10%;}
+		.fusion-button-wrapper{padding:0 0 0 10%;margin:0 0 20px 0;}
+	}
+}
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-/* Homepage - Video Section - Padding for container & Youtube Video 
+/* Video Container - Padding & Margins */
 
-.tsfe-video-text-padding {padding-left: 21%; padding-right: 21%;}
-.tsfe-video-padding {padding-top:30px; padding-left: 15%!important; padding-right: 15%!important;}*/
+.tsfe-video-container {padding-top: 40px!important; padding-bottom: 70px!important;}
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -273,7 +312,7 @@ iframe{border:none!important;}
 /* Homepage - Charity Bar - Padding & Button Padding */
 
 .tsfe-charity-padding {
-	padding-top: 60px!important; padding-bottom: 65px!important; background-image: url(http://273.1d3.mwp.accessdomain.com/wp-content/uploads/t2m_header.jpg); background-size: cover!important; background-repeat: no-repeat!important; background-position: left center!important;
+	padding-top: 130px!important; padding-bottom: 90px!important; background-image: url(http://273.1d3.mwp.accessdomain.com/wp-content/uploads/t2m_header.jpg); background-size: cover!important; background-repeat: no-repeat!important; background-position: left center!important;
 	.tsfe-website-btn {margin-top: 10px; margin-bottom:0px; margin-right: 20px}
 	.tsfe-download-btn {margin-top: 10px; margin-bottom:0px;}
 }
@@ -290,16 +329,15 @@ iframe{border:none!important;}
 	.fusion-column-wrapper{background:@grey1;padding:40px 40px 20px 40px;}
 }
 
+.tsfe-faq-box-container {padding-left: 40px!important; padding-right: 40px!important;}
+
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
-
 /* Sign Off - Tough Enough Bar */
 
-.tsfe-tough-enough-bar{
-	.fusion-column-wrapper{padding-top:10%!important;padding-left:10%!important;padding-bottom:10%!important;padding-right:10%!important;
-		h1{text-shadow:0 0 20px rgba(0,0,0,1);margin-bottom:20px!important;}
-	}
+.tsfe-tough-enough-bar {padding-top:10%!important; padding-left:10%!important; padding-bottom:10%!important;padding-right:10%!important;
+	h1 {text-shadow:0 0 20px rgba(0,0,0,1);margin-bottom:20px!important;}
 }
 
 
@@ -375,11 +413,20 @@ iframe{border:none!important;}
 	}
 	
 	/* ////////////////////////////////////////////////////////////////////////////////////////// */
-		
-	/* Homepage Video Section - Padding for container & Youtube Video */
+	
+	/* Events Overview Section - 3 Col Boxes */
 
-	.tsfe-video-text-padding {padding-left: 15%; padding-right: 15%;}
-	.tsfe-video-padding {padding-left: 15%!important; padding-right: 15%!important;}
+	.tsfe-event-box{width:48%!important;margin-right:0!important;
+		&:nth-of-type(2n){float:right!important;}
+		.fusion-column-wrapper{
+			.fusion-title{padding:0 40px;margin:30px 0 20px!important;
+				h2{font-size:20px!important;}
+			}
+			p{padding:0 40px;}
+			.fusion-button-wrapper{padding:0 0 0 40px;margin:0 0 20px 0;}
+		}
+	}
+	.fusion-column-first.tsfe-event-box{clear:none;}
 	
 	/* ////////////////////////////////////////////////////////////////////////////////////////// */
 	
@@ -445,7 +492,7 @@ iframe{border:none!important;}
 	
 	.tsfe-heading-padding{margin-top:40px!important;}
 	
-	.tsfe-category-mob-padding{padding-top:0!important; padding-left:0!important; padding-right:0!important;}
+	.tsfe-category-mob-padding{padding-top:0!important; padding-left:0!important; padding-right:0!important; padding-bottom:30px!important;}
 		
 	.tsfe-mob-padding{padding-top:0!important; padding-left:0!important; padding-right:0!important; padding-bottom:0!important; margin-top:0px!important;}		
 	
@@ -486,6 +533,29 @@ iframe{border:none!important;}
 		.fusion-column-wrapper {padding-top: 40px!important; padding-left: 35px!important; padding-bottom: 40px!important; padding-right: 35px!important;}
 	}
 	
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Hill Fit - Mobile Background Colour Change */
+	
+	.tsfe-hill-fit-day-overview {background-color:@white;}
+	
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Charity Bar - Padding & Button Padding */
+
+	.tsfe-charity-padding {
+		padding-top: 60px!important; padding-bottom: 65px!important;}
+		
+		
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Video Container - Padding & Margins */
+
+	.tsfe-video-container {padding-top: 40px!important; padding-bottom: 40px!important;}
+	
+
 	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 	
 	/* Testimonial */
@@ -498,11 +568,36 @@ iframe{border:none!important;}
 	.tsfe-testimonials-padding {padding-top: 60px!important; padding-left: 35px!important; padding-bottom: 40px!important; padding-right: 35px!important;}
 	
 	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
-		
-	/* Homepage Video Section - Padding for container & Youtube Video */
+
+	/* FAQ */
+
+	.tsfe_faq_box{margin-bottom:0px!important;
+		.fusion-column-wrapper{background:@grey1;padding:0px 0px 20px 0px;}
+	}
+
+	.tsfe-faq-box-container {background:@grey1; padding: 40px 35px 10px 35px !important;}
 	
-	.tsfe-video-text-padding {padding-left: 10%; padding-right: 10%}
-	.tsfe-video-padding {padding-left: 10%!important; padding-right: 10%!important;}
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Sign Off - Tough Enough Bar */
+
+	.tsfe-tough-enough-bar {padding-top:50px!important; padding-left:10%!important; padding-bottom:60px!important;padding-right:10%!important;
+		h1 {text-shadow:0 0 20px rgba(0,0,0,1); margin-bottom:0px!important; font-size: 54px;}
+	}
+
+
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
+	/* Meet The Team */
+	
+	.tsfe-team-padding {background-color: #fff!important;padding-top: 0!important; padding-bottom: 20px!important;
+		.title-heading-left {padding-top: 20px!important;}
+		p {margin-bottom: 30px!important;}
+	}
+
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+	
 	
 }
 
@@ -514,6 +609,7 @@ iframe{border:none!important;}
 
 @media only screen and (max-width: 500px) {
 	
+	
 	/* Event Category Icon Left Align */
 	
 	.tsfe-category-background{
@@ -523,36 +619,26 @@ iframe{border:none!important;}
 	}	
 	
 	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
-	
-	/* Sign Off - Tough Enough Bar */
-
-	.tsfe-tough-enough-bar{
-		.fusion-column-wrapper {padding-top: 40px!important; padding-left: 35px!important; padding-bottom: 40px!important; padding-right: 35px!important;}
-	}
-	
-	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
-	
-	/* Homepage Video Section - Padding for container & Youtube Video */
-	
-	.tsfe-video-text-padding {padding-left: 0; padding-right: 0;}
-	.tsfe-video-padding {padding-top: 10px; padding-left: 0px!important; padding-right: 0px!important;}
-	
-	
-	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
-	
+		
 	/* Charity Bar - Padding & Button Padding */
 
 	.tsfe-charity-padding {
-		padding-top: 0px; padding-bottom: 0px; background-image: none;
+		padding-top: 35px!important; padding-bottom: 40px!important; background-image: none;
 		.tsfe-orange-btn {margin-top: 6px; margin-bottom:15px;}
 	}
-	
-
+		
 	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
-	
-	/* Meet The Team - Person CSS */
 
-	.tsfe-team-padding {padding-top: 40px!important; padding-bottom: 0px!important;}
+	/* FAQ */
+
+	.tsfe_faq_box{margin-bottom:0px!important;
+		.fusion-column-wrapper{background:@grey1;padding:0px 0px 20px 0px;}
+	}
+
+	.tsfe-faq-box-container {background:@grey1; padding: 40px 35px 10px 35px !important;}
+	
+	
+	/* ////////////////////////////////////////////////////////////////////////////////////////////// */
 	
 	
 }
